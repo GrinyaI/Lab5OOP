@@ -5,14 +5,13 @@ import java.util.*;
 public class Server {
     public static void main(String[] args) {
         try {
-            ServerSocket serverSocket = new ServerSocket(12345); // Порт сервера
+            ServerSocket serverSocket = new ServerSocket(12345);
             System.out.println("Сервер запущен. Ожидание подключения клиента...");
 
             while (true) {
-                Socket clientSocket = serverSocket.accept(); // Ожидание подключения клиента
+                Socket clientSocket = serverSocket.accept();
                 System.out.println("Клиент подключен: " + clientSocket);
 
-                // Чтение файла с сонетами Шекспира
                 List<String> sonnets = new ArrayList<>();
                 try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\grine\\IdeaProjects\\Lab5OOP\\src\\txt\\Sonnet.txt"))) {
                     String line;
